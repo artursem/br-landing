@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import brlogo from "../assets/badrituallogo.svg";
+import Link from "./Link.astro";
+import type { LinkProps } from "./Link.astro";
+
+const subpages = [
+  { href: "/test", label: "test" },
+  { href: "/", label: "home" },
+  { href: "/video", label: "video" },
+  { href: "/contact", label: "contact" },
+];
+
+const socials = [
+  { href: "/test", label: "insta" },
+  { href: "/", label: "spoti" },
+  { href: "/video", label: "youtube" },
+  { href: "/video", label: "facebook" },
+  { href: "/video", label: "tidal" },
+];
+
+const title = "bad ritual";
+---
+
+<nav
+  class="flex flex-horizontal justify-between align-middle w-screen bg-neutral-950 m-0 p-2"
+>
+  <div class="flex flex-horizontal align-middle">
+    <Image src={brlogo} alt={title} width="32" height="32" class="mr-4" />
+    <ul class="flex flex-horizontal space-x-3 pt-1">
+      {
+        subpages.map(({ href, label }: LinkProps) => {
+          return (
+            <li>
+              <Link href={href} label={label} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+  <!-- <div>
+    <Link href="/" label={title} />
+  </div> -->
+  <div>
+    <ul class="flex flex-horizontal space-x-3 pt-1">
+      <li>insta</li>
+      <li>spotify</li>
+      <li>youtube</li>
+      <li>tidal</li>
+    </ul>
+  </div>
+</nav>
