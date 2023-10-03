@@ -1,7 +1,21 @@
-<div class="width-full h-96 hero">cont</div>
+<div id="hero" class="width-full h-96 hero"></div>
 <style>
   .hero {
     width: 100%;
-    background: url("../assets/photos/br_lc.jpeg") no-repeat center center;
+    background:
+      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)),
+      url("../assets/photos/br_lc.jpeg") no-repeat center center;
+    background-position: 50% 50%;
+    background-size: 120%;
   }
 </style>
+<script>
+  const heroDiv = document.getElementById("hero");
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY || 1;
+    const newSize = scrollY * 0.3 + 120;
+    if (heroDiv) {
+      heroDiv.style.backgroundSize = `${newSize}%`;
+    }
+  });
+</script>
