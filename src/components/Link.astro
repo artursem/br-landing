@@ -1,9 +1,13 @@
 ---
 export interface LinkProps {
-  label: string;
+  label?: string;
+  icon?: string;
   href: string;
+  blank?: boolean;
 }
-const { label, href } = Astro.props;
+const { label, icon, href, blank } = Astro.props;
 ---
 
-<a href={href} class="text-gray-200">{label}</a>
+<a href={href} class="text-gray-200" target={blank ? "_blank" : "_self"}>
+  {icon ? icon : label}
+</a>

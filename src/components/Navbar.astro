@@ -39,15 +39,17 @@ const title = "bad ritual";
       }
     </ul>
   </div>
-  <!-- <div>
-    <Link href="/" label={title} />
-  </div> -->
   <div>
     <ul class="flex flex-horizontal space-x-3 pt-1">
-      <li>insta</li>
-      <li>spotify</li>
-      <li>youtube</li>
-      <li>tidal</li>
+      {
+        socials.map(({ href, label }: LinkProps) => {
+          return (
+            <li>
+              <Link href={href} label={label} blank />
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
 </nav>

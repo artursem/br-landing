@@ -9,6 +9,9 @@ module.exports = {
 			fontFamily: {
 				'sans': ['Roboto', 'Helvetica', 'Arial', 'sans-serif']
 			},
+			backgroundImage: {
+				'hero-pattern': "url('/assets/photos/br_lc.jpeg')",
+			  }
 		},
 	},
 	plugins: [],
